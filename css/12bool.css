@@ -1,0 +1,81 @@
+/* DEBUG:  */ /*ci seve solo per rendere visibile le colonne dato che ora non hanno contenuto a parte quel p*/
+.debug [class*="col_"] {
+  height: 150px;
+  background-color: lightgreen;
+  border: 1px solid blue;
+  /* potevamo mettere anche qui positon relative ma è corretto? */
+}
+/* Bisogna modificare la regola di debug del framework per vedere le colonne all'interno delle colonne
+la mia soluzione è sul CSS*/
+
+/* IPOTESI FATTA IN CLASSE più legata al debug che crea il problema */
+.col_6_debug{
+  width: 100%;
+}
+.debug [class*="col_"] > .col_6_debug {
+  padding: 5px;
+  height: 100%;
+}
+.debug [class*="col_"] > .col_6_debug > [class*="col_"] {
+  height: 100%;
+}
+/* IPOTESI FATTA IN CLASSE più legata al debug che crea il problema */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.container::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+[class*="col_"] {
+  float: left;
+}
+
+
+
+/* colonne */
+.col_1{
+  width: calc((100%/12) * 1);
+}
+.col_2{
+  width: calc((100%/12) * 2);
+}
+.col_3{
+  width: calc((100%/12) * 3);
+}
+.col_4{
+  width: calc((100%/12) * 4);
+}
+.col_5{
+  width: calc((100%/12) * 5);
+}
+.col_6{
+  width: calc((100%/12) * 6);
+}
+.col_7{
+  width: calc((100%/12) * 7);
+}
+.col_8{
+  width: calc((100%/12) * 8);
+}
+.col_9{
+  width: calc((100%/12) * 9);
+}
+.col_10{
+  width: calc((100%/12) * 10);
+}
+.col_11{
+  width: calc((100%/12) * 11);
+}
+.col_12{
+  width: calc((100%/12) * 12);
+}
+/* utility class */
